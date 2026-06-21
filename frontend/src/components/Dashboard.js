@@ -7,7 +7,8 @@ import CraneOverview from './CraneOverview';
 import TrendChart from './TrendChart';
 import AlertsList from './AlertsList';
 
-const API_URL = 'http://localhost:3001/api';
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:3001';
+const API_URL = `${API_BASE_URL}/api`;
 
 const Dashboard = () => {
   const [latestReadings, setLatestReadings] = useState([]);
@@ -59,7 +60,7 @@ const Dashboard = () => {
     fetchTrendData();
 
     // Set up Socket.IO connection
-    const socket = io('http://localhost:3001');
+    const socket = io(API_BASE_URL);
 
     socket.on('new_reading', (reading) => {
       // Update Latest Readings overview

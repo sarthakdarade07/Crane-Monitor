@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import { Database, ArrowLeft } from 'lucide-react';
 import '../index.css';
 
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:3001';
+
 const RawData = () => {
   const [readings, setReadings] = useState([]);
   const [error, setError] = useState('');
@@ -18,7 +20,7 @@ const RawData = () => {
   useEffect(() => {
     const fetchReadings = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/api/readings/all');
+        const response = await axios.get(`${API_BASE_URL}/api/readings/all`);
         setReadings(response.data);
       } catch (err) {
         setError('Failed to load readings.');
@@ -26,7 +28,7 @@ const RawData = () => {
     };
     fetchReadings();
 
-    const socket = io('http://localhost:3001');
+    const socket = io(API_BASE_URL);
     socket.on('new_reading', (reading) => {
       setReadings((prev) => [reading, ...prev].slice(0, 200)); // Keep max 200 locally
     });

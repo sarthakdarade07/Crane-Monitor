@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { Users, Shield, ArrowLeft, Lock, Ban, CheckCircle } from 'lucide-react';
 import '../index.css';
 
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:3001';
+
 const AdminPanel = () => {
   const [users, setUsers] = useState([]);
   const [error, setError] = useState('');
@@ -12,7 +14,7 @@ const AdminPanel = () => {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/api/users');
+      const response = await axios.get(`${API_BASE_URL}/api/users`);
       setUsers(response.data);
     } catch (err) {
       setError('Failed to load users.');
@@ -25,7 +27,7 @@ const AdminPanel = () => {
 
   const handleBlockUser = async (userId, currentStatus) => {
     try {
-      await axios.patch(`http://localhost:3001/api/users/${userId}/block`, {
+      await axios.patch(`${API_BASE_URL}/api/users/${userId}/block`, {
         is_blocked: !currentStatus
       });
       setSuccess(`User status updated successfully.`);
@@ -42,7 +44,7 @@ const AdminPanel = () => {
     if (!newPassword) return;
 
     try {
-      await axios.patch(`http://localhost:3001/api/users/${userId}/password`, {
+      await axios.patch(`${API_BASE_URL}/api/users/${userId}/password`, {
         new_password: newPassword
       });
       setSuccess(`Password updated successfully.`);
