@@ -1,0 +1,108 @@
+CRANE MONITOR SYSTEM - DEPENDENCIES
+
+========================================
+BACKEND DEPENDENCIES (/backend/package.json)
+============================================
+
+express: ^5.2.1
+
+* Core web server framework
+
+pg: ^8.22.0
+
+* PostgreSQL client for database connection
+
+socket.io: ^4.8.3
+
+* WebSockets for real-time telemetry streaming
+
+jsonwebtoken: ^9.0.3
+
+* JWT generation and verification for secure API routes
+
+bcrypt: ^6.0.0
+
+* Cryptographic hashing for user passwords
+
+cors: ^2.8.6
+
+* Cross-Origin Resource Sharing middleware
+
+dotenv: ^17.4.2
+
+* Environment variable management
+
+========================================
+FRONTEND DEPENDENCIES (/frontend/package.json)
+==============================================
+
+react: ^19.2.7
+
+* Core UI library
+
+react-dom: ^19.2.7
+
+* React Document Object Model bindings
+
+react-router-dom: ^7.18.0
+
+* Client-side routing for multi-page SPA navigation
+
+axios: ^1.18.0
+
+* HTTP client for making secure REST API calls
+
+socket.io-client: ^4.8.3
+
+* WebSocket client to listen for real-time server pushes
+
+recharts: ^3.8.1
+
+* Dynamic charting library for telemetry visualization
+
+lucide-react: ^1.21.0
+
+* Modern UI iconography
+
+react-scripts: 5.0.1
+
+* Create React App build pipeline and development server
+
+web-vitals: ^2.1.4
+
+* Performance metrics tracking
+
+========================================
+TECHNOLOGY SUMMARY
+==================
+
+Frontend:
+
+* React.js
+* React Router
+* Axios
+* Recharts
+* Lucide React
+* Socket.IO Client
+
+Backend:
+
+* Node.js
+* Express.js
+* Socket.IO
+* JWT Authentication
+* Bcrypt Password Hashing
+
+Database:
+
+* PostgreSQL (Supabase)
+
+Deployment:
+
+* Netlify (Frontend)
+* Render (Backend)
+
+Purpose:
+Provides real-time crane telemetry monitoring, live alerting,
+secure authentication, and historical analytics through a
+modern client-server architecture.
