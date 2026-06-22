@@ -4,6 +4,13 @@ This document provides concrete evidence of the application's functionality, inc
 
 ---
 
+## 🔑 Test Credentials
+The database has been pre-seeded with the following two accounts for testing purposes:
+- **Admin User:** Username: `admin` | Password: `admin123`
+- **Staff User:** Username: `staff` | Password: `staff123`
+
+---
+
 ## 1. API Endpoints: Requests & Responses
 
 ### A. Authentication Login (`POST /api/auth/login`)
