@@ -4,7 +4,7 @@
 **(Runs in under 5 minutes)**
 
 ### Live URLs
-- **Frontend (Netlify):** [INSERT YOUR NETLIFY URL HERE]
+- **Frontend (Netlify):** `https://cranemanagement.netlify.app`
 - **Backend API (Render):** `https://crane-monitor-api.onrender.com`
 
 ### Local Setup
